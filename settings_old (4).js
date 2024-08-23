@@ -4,38 +4,9 @@ const { defineStore } = require( 'pinia' );
 
 const submissionNumbers = [ '~invalid~', 'unsubmitted', 'pending', 'reviewing', 'declined' ];
 
-// Default API parameters; mode, showunreviewed, and showothers map to settings
-const defaultParams = {
-	mode: 'npp',
-	namespace: 0,
-	showunreviewed: 1,
-	showothers: 1,
-	format: 'json',
-	formatversion: 2,
-	version: 2
-};
 
-// 'queueMode', 'nppSortDir', or 'afcSort'
-const defaultImmediate = Object.freeze( {
-	queueMode: defaultParams.mode,
-	nppSortDir: 'newestfirst',
-	afcSort: 'newestfirst'
-} );
-// Default filter form settings; these get translated to API parameters
-const defaultSettings = Object.freeze( {
-	afcSubmissionState: 'pending',
-	nppNamespace: 0,
-	nppIncludeUnreviewed: true,
-	nppIncludeReviewed: false,
-	nppIncludeNominated: false,
-	nppIncludeRedirects: false,
-	nppIncludeOthers: true,
-	nppFilter: 'all',
-	afcFilter: 'all',
-	afcFilterUser: '',
-	nppFilterUser: '',
-	nppPredictedRating: {
-		stub: false,
+
+,
 		start: false,
 		c: false,
 		b: false,
@@ -268,7 +239,21 @@ module.exports = {
 				if ( optionToggle ) {
 					this.params[ paramName ] = 1;
 				} else {
-					delete this.params[ paramName ];
+		ult filter form settings; these get translated to API parameters
+const defaultSettings = Object.freeze( {
+	afcSubmissionState: 'pending',
+	nppNamespace: 0,
+	nppIncludeUnreviewed: true,
+	nppIncludeReviewed: false,
+	nppIncludeNominated: false,
+	nppIncludeRedirects: false,
+	nppIncludeOthers: true,
+	nppFilter: 'all',
+	afcFilter: 'all',
+	afcFilterUser: '',
+	nppFilterUser: '',
+	nppPredictedRating: {
+		stub: false			delete this.params[ paramName ];
 				}
 			},
 			// Map ORES form values to API parameters
